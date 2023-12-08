@@ -1,7 +1,15 @@
-import "./App.css";
+import Title from "./components/Title";
+import produtosMock from "./products (1).json";
+import "./styles/globals.scss";
 
 function App() {
-  return <div></div>;
+  console.log(produtosMock.data.nodes.length);
+
+  return (
+    <>
+      <Title></Title>
+    </>
+  );
 }
 
 export default App;
