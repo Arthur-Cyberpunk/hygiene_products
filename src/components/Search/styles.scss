@@ -1,0 +1,33 @@
+.boxSearch {
+  width: 100%;
+
+  .searchHere {
+    display: flex;
+    width: 30%;
+    border-bottom: 2px solid #4e9a90;
+    margin-top: 4rem;
+
+    @media (max-width: 900px) {
+      width: 60%;
+    }
+
+    @media (max-width: 600px) {
+      width: 100%;
+    }
+
+    .searchProduct {
+      width: 100%;
+      border: none;
+      outline: none;
+      font-size: 2rem;
+
+      &::placeholder {
+        color: #4e9a90;
+      }
+    }
+
+    .iconSearch {
+      width: 3rem;
+    }
+  }
+}
