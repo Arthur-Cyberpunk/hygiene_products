@@ -7,7 +7,7 @@ const Products = () => {
 
   return (
     <div className="boxTitleProducts">
-      <span className="title">resultados</span>
+      <span className="title">{productsSearch.length} resultados</span>
       <div className="productGrid">
         {productsSearch?.map((product, id) =>
           productsSearch.length !== 0 ? 

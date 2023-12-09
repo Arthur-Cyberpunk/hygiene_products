@@ -6,7 +6,7 @@ export const ProductsContext = createContext({});
 const ProductsProvider = ({ children }) => {
   const [productsSearch, setProductsSearch] = useState(produtosMock.data.nodes)
 
-  console.log(produtosMock.data.nodes);
+  //console.log(produtosMock.data.nodes);
 
   return (
     <ProductsContext.Provider

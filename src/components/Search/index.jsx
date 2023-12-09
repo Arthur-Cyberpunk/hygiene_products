@@ -16,7 +16,7 @@ const Search = () => {
     const filteredProducts = produtosMock.data.nodes.filter((produto) =>
       produto.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
-    console.log(filteredProducts)
+    //console.log(filteredProducts)
     setProductsSearch(filteredProducts);
   };
 
