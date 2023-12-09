@@ -1,23 +1,34 @@
-import { useContext, useState } from 'react';
+import { useContext, useState } from "react";
 import searchMagnifier from "../../assets/search.svg";
 import { ProductsContext } from "../../useContext/productsContext";
 import "./styles.scss";
 
 const Search = () => {
-  const { produtosMock, setProductsSearch } = useContext(ProductsContext);
+  const {
+    produtosMock,
+    setProductsSearch,
+    productsSearch,
+    categoriaSelecionada,
+  } = useContext(ProductsContext);
 
-  const [search, setSearch] = useState('');
+  const [search, setSearch] = useState("");
   const [isInputFocused, setIsInputFocused] = useState(false);
 
   const handleSearch = (e) => {
     const searchTerm = e.target.value;
-    setSearch(searchTerm);
+    setSearch(e.target.value);
 
-    const filteredProducts = produtosMock.data.nodes.filter((produto) =>
-      produto.name.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-    //console.log(filteredProducts)
-    setProductsSearch(filteredProducts);
+    if (categoriaSelecionada !== '') {
+      const filteredProductsTeste = productsSearch.filter((produto) =>
+        produto.name.toLowerCase().includes(searchTerm.toLowerCase()),
+      );
+      setProductsSearch(filteredProductsTeste);
+    } else {
+      const filteredProducts = produtosMock.data.nodes.filter((produto) =>
+        produto.name.toLowerCase().includes(searchTerm.toLowerCase()),
+      );
+      setProductsSearch(filteredProducts);
+    }
   };
 
   return (
@@ -26,7 +37,7 @@ const Search = () => {
         <div className="searchHere">
           <input
             type="text"
-            placeholder={isInputFocused ? '' : 'BUSQUE AQUI'}
+            placeholder={isInputFocused ? "" : "BUSQUE AQUI"}
             value={search}
             onChange={handleSearch}
             className="searchProduct"

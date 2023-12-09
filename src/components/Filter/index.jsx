@@ -4,10 +4,9 @@ import Products from "../Products";
 import "./styles.scss";
 
 const Filter = () => {
-  const { produtosMock } = useContext(ProductsContext);
+  const { produtosMock, filtrarProdutos, categoriaSelecionada } = useContext(ProductsContext);
 
   const [listaDeCategorias, setListaDeCategorias] = useState([]);
-  const [categoriaSelecionada, setCategoriaSelecionada] = useState('');
 
   useEffect(() => {
     const categoriasUnicas = new Set();
@@ -17,19 +16,14 @@ const Filter = () => {
     setListaDeCategorias(Array.from(categoriasUnicas));
   }, [produtosMock.data.nodes]);
 
-  //console.log(listaDeCategorias)
-
-  const filtrarProdutos = categoria => {
-
-    console.log(categoria)
-    setCategoriaSelecionada(categoria);
+  const handleCheckboxChange = (category) => {
+    if (categoriaSelecionada === category) {
+      filtrarProdutos('');
+    } else {
+      filtrarProdutos(category);
+    }
   };
 
-  const produtosFiltrados = produtosMock.data.nodes.filter(
-    produto => produto.category === categoriaSelecionada
-  );
-
-  console.log(produtosFiltrados)
 
   return (
     <main className="filterProducts">
@@ -42,14 +36,14 @@ const Filter = () => {
 
             <div className="filterOptions">
               {listaDeCategorias.map((category) => (
-                <div className="boxCheckBox" onClick={() => filtrarProdutos(category)}>
+                <div className="boxCheckBox" >
                   <input
                     className="checkBoxFilter"
                     type="checkbox"
-                    // id={filtro}
-                    // name={filtro}
-                    // checked={filtros[filtro]}
-                    // onChange={() => handleCheckboxChange(filtro)}
+                    id={category}
+                    name={category}
+                    checked={categoriaSelecionada === category}
+                    onClick={() => handleCheckboxChange(category)}
                   />
                   <label>{category}</label>
                 </div>
