@@ -40,8 +40,6 @@ const ProductsProvider = ({ children }) => {
 
   const result = filteredData(produtosMock, categoriaSelecionada, search);
 
-  console.log(result)
-
   return (
     <ProductsContext.Provider
       value={{ produtosMock, productsSearch, setProductsSearch, filtrarProdutos, categoriaSelecionada, handleSearch, search, result }}
