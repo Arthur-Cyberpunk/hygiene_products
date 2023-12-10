@@ -36,14 +36,13 @@ const CategoryFilter = () => {
 
             <div className="filterOptions">
               {listCategories.map((category, id) => (
-                <div key={id} className="boxCheckBox">
+                <div key={id} className="boxCheckBox" onClick={() => handleCheckboxChange(category)}>
                   <input
                     className="checkBoxFilter"
                     type="checkbox"
                     id={category}
                     name={category}
-                    checked={selectedCategory === category}
-                    onClick={() => handleCheckboxChange(category)}
+                    checked={selectedCategory === category}                  
                   />
                   <label>{category}</label>
                 </div>
