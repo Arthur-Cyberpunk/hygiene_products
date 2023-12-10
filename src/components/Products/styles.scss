@@ -23,13 +23,11 @@
     @media (max-width: 900px) {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 2rem;
     }
 
     @media (max-width: 600px) {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 2rem;
     }
 
     .product {
