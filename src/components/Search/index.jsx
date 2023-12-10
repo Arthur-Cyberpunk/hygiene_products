@@ -4,32 +4,9 @@ import { ProductsContext } from "../../useContext/productsContext";
 import "./styles.scss";
 
 const Search = () => {
-  const {
-    produtosMock,
-    setProductsSearch,
-    productsSearch,
-    categoriaSelecionada,
-  } = useContext(ProductsContext);
+  const { handleSearch, search } = useContext(ProductsContext);
 
-  const [search, setSearch] = useState("");
   const [isInputFocused, setIsInputFocused] = useState(false);
-
-  const handleSearch = (e) => {
-    const searchTerm = e.target.value;
-    setSearch(e.target.value);
-
-    if (categoriaSelecionada !== '') {
-      const filteredProductsTeste = productsSearch.filter((produto) =>
-        produto.name.toLowerCase().includes(searchTerm.toLowerCase()),
-      );
-      setProductsSearch(filteredProductsTeste);
-    } else {
-      const filteredProducts = produtosMock.data.nodes.filter((produto) =>
-        produto.name.toLowerCase().includes(searchTerm.toLowerCase()),
-      );
-      setProductsSearch(filteredProducts);
-    }
-  };
 
   return (
     <main className="boxSearch">

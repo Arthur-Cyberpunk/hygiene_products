@@ -24,7 +24,6 @@ const Filter = () => {
     }
   };
 
-
   return (
     <main className="filterProducts">
       <div className="container">
@@ -35,8 +34,8 @@ const Filter = () => {
             </div>
 
             <div className="filterOptions">
-              {listaDeCategorias.map((category) => (
-                <div className="boxCheckBox" >
+              {listaDeCategorias.map((category, id) => (
+                <div key={id} className="boxCheckBox" >
                   <input
                     className="checkBoxFilter"
                     type="checkbox"
