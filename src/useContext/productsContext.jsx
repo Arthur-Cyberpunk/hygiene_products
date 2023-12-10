@@ -1,48 +1,57 @@
 import { createContext, useState } from "react";
-import produtosMock from "../products (1).json";
+import mockProducts from "../products (1).json";
 
 export const ProductsContext = createContext({});
 
 const ProductsProvider = ({ children }) => {
-  const [productsSearch, setProductsSearch] = useState(produtosMock.data.nodes);
-  const [categoriaSelecionada, setCategoriaSelecionada] = useState('');
-  const [search, setSearch] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("");
+  const [searchValueFilter, setSearchValueFilter] = useState("");
+  const productsSearch = mockProducts.data.nodes;
 
-  const handleSearch = (e) => {
-    setSearch(e.target.value);
+  const handleSearchFilter = (e) => {
+    setSearchValueFilter(e.target.value);
   };
 
-  const filteredProductsTeste = productsSearch.filter((produto) =>
-    produto.name.toLowerCase().includes(search.toLowerCase()),
+  const filteredProductsTeste = productsSearch.filter((products) =>
+    products.name.toLowerCase().includes(searchValueFilter.toLowerCase()),
   );
-  
-  const filtrarProdutos = categoria => {
-    setCategoriaSelecionada(categoria);
+
+  const handleCategoryFilter = (category) => {
+    setSelectedCategory(category);
   };
 
-  function filteredData(produtosMock, categoriaSelecionada, search) {
-    let filteredProducts = produtosMock.data.nodes;
+  const filteredData = (mockProducts, selectedCategory, searchValueFilter) => {
+    let filteredProducts = mockProducts.data.nodes;
 
-    if (search) {
+    if (searchValueFilter) {
       filteredProducts = filteredProductsTeste;
     }
 
-    if (categoriaSelecionada) {
-
-        filteredProducts = filteredProducts.filter(
-          produto => produto.category.name === categoriaSelecionada
+    if (selectedCategory) {
+      filteredProducts = filteredProducts.filter(
+        (products) => products.category.name === selectedCategory,
       );
     }
 
-    
     return filteredProducts;
-  }
+  };
 
-  const result = filteredData(produtosMock, categoriaSelecionada, search);
+  const finalProducts = filteredData(
+    mockProducts,
+    selectedCategory,
+    searchValueFilter,
+  );
 
   return (
     <ProductsContext.Provider
-      value={{ produtosMock, productsSearch, setProductsSearch, filtrarProdutos, categoriaSelecionada, handleSearch, search, result }}
+      value={{
+        mockProducts,
+        handleCategoryFilter,
+        selectedCategory,
+        handleSearchFilter,
+        searchValueFilter,
+        finalProducts,
+      }}
     >
       {children}
     </ProductsContext.Provider>

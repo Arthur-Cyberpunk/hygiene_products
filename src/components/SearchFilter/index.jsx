@@ -4,7 +4,7 @@ import { ProductsContext } from "../../useContext/productsContext";
 import "./styles.scss";
 
 const Search = () => {
-  const { handleSearch, search } = useContext(ProductsContext);
+  const { handleSearchFilter, searchValueFilter } = useContext(ProductsContext);
 
   const [isInputFocused, setIsInputFocused] = useState(false);
 
@@ -15,8 +15,8 @@ const Search = () => {
           <input
             type="text"
             placeholder={isInputFocused ? "" : "BUSQUE AQUI"}
-            value={search}
-            onChange={handleSearch}
+            value={searchValueFilter}
+            onChange={handleSearchFilter}
             className="searchProduct"
             onFocus={() => setIsInputFocused(true)}
             onBlur={() => setIsInputFocused(false)}

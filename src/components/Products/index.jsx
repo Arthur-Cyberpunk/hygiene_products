@@ -3,19 +3,22 @@ import { ProductsContext } from "../../useContext/productsContext";
 import "./styles.scss";
 
 const Products = () => {
-  const { result } = useContext(ProductsContext);
+  const { finalProducts } = useContext(ProductsContext);
 
   return (
     <div className="boxTitleProducts">
-      <span className="title">{result.length} resultados</span>
+      <span className="title">{finalProducts.length} resultados</span>
       <div className="productGrid">
-        {result?.map((product, id) => (
+        {finalProducts?.map((product, id) => (
           <div key={id} className="product">
             <div className="infoProduct">
-                <img src={product.images[0].asset.url} alt="" />
-                <p className="titleProduct">{product.name}</p>
+              <img
+                src={product.images[0].asset.url}
+                alt={product.images[0].alt}
+              />
+              <p className="titleProduct">{product.name}</p>
             </div>
-            </div> 
+          </div>
         ))}
       </div>
     </div>

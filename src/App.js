@@ -1,5 +1,5 @@
-import Filter from "./components/Filter";
-import Search from "./components/Search";
+import CategoryFilter from "./components/CategoryFilter";
+import SearchFilter from "./components/SearchFilter";
 import Title from "./components/Title";
 import "./styles/globals.scss";
 
@@ -7,8 +7,8 @@ function App() {
   return (
     <>
       <Title></Title>
-      <Search></Search>
-      <Filter></Filter>
+      <SearchFilter></SearchFilter>
+      <CategoryFilter></CategoryFilter>
     </>
   );
 }

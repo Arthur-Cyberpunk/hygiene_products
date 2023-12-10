@@ -3,24 +3,25 @@ import { ProductsContext } from "../../useContext/productsContext";
 import Products from "../Products";
 import "./styles.scss";
 
-const Filter = () => {
-  const { produtosMock, filtrarProdutos, categoriaSelecionada } = useContext(ProductsContext);
+const CategoryFilter = () => {
+  const { mockProducts, handleCategoryFilter, selectedCategory } =
+    useContext(ProductsContext);
 
-  const [listaDeCategorias, setListaDeCategorias] = useState([]);
+  const [listCategories, setListCategories] = useState([]);
 
   useEffect(() => {
     const categoriasUnicas = new Set();
-    produtosMock.data.nodes.forEach(product => {
+    mockProducts.data.nodes.forEach((product) => {
       categoriasUnicas.add(product.category.name);
     });
-    setListaDeCategorias(Array.from(categoriasUnicas));
-  }, [produtosMock.data.nodes]);
+    setListCategories(Array.from(categoriasUnicas));
+  }, [mockProducts.data.nodes]);
 
   const handleCheckboxChange = (category) => {
-    if (categoriaSelecionada === category) {
-      filtrarProdutos('');
+    if (selectedCategory === category) {
+      handleCategoryFilter("");
     } else {
-      filtrarProdutos(category);
+      handleCategoryFilter(category);
     }
   };
 
@@ -34,20 +35,19 @@ const Filter = () => {
             </div>
 
             <div className="filterOptions">
-              {listaDeCategorias.map((category, id) => (
-                <div key={id} className="boxCheckBox" >
+              {listCategories.map((category, id) => (
+                <div key={id} className="boxCheckBox">
                   <input
                     className="checkBoxFilter"
                     type="checkbox"
                     id={category}
                     name={category}
-                    checked={categoriaSelecionada === category}
+                    checked={selectedCategory === category}
                     onClick={() => handleCheckboxChange(category)}
                   />
                   <label>{category}</label>
                 </div>
               ))}
-
             </div>
           </div>
 
@@ -58,4 +58,4 @@ const Filter = () => {
   );
 };
 
-export default Filter;
+export default CategoryFilter;
