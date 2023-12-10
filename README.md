@@ -17,6 +17,6 @@
 <h3 align='center'>Home Page 🏡</h3>
 
 <div align='center'>
-<img src='https://github.com/Arthur-Cyberpunk/ilumina_ecommerce/assets/72763456/e8d2d4e6-5845-49ec-815d-cf25493c306d'/>
+<img src='https://github.com/Arthur-Cyberpunk/hygiene_products/assets/72763456/fc72c2ec-68ee-42b9-9be8-a0d6a62beac3'/>
 
 </div>
