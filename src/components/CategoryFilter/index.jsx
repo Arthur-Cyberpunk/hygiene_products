@@ -10,11 +10,21 @@ const CategoryFilter = () => {
   const [listCategories, setListCategories] = useState([]);
 
   useEffect(() => {
-    const categoriasUnicas = new Set();
-    mockProducts.data.nodes.forEach((product) => {
-      categoriasUnicas.add(product.category.name);
-    });
-    setListCategories(Array.from(categoriasUnicas));
+    const countQuantityByCategory = () => {
+      const count = [];
+
+      mockProducts.data.nodes.forEach((product) => {
+        if (count[product.category.name]) {
+          count[product.category.name]++;
+        } else {
+          count[product.category.name] = 1;
+        }
+      });
+
+      setListCategories(count);
+    };
+
+    countQuantityByCategory();
   }, [mockProducts.data.nodes]);
 
   const handleCheckboxChange = (category) => {
@@ -33,23 +43,29 @@ const CategoryFilter = () => {
             <div className="boxTitleFilter">
               <span className="title">Filtros</span>
             </div>
-
             <div className="filterOptions">
-              {listCategories.map((category, id) => (
-                <div key={id} className="boxCheckBox" onClick={() => handleCheckboxChange(category)}>
-                  <input
-                    className="checkBoxFilter"
-                    type="checkbox"
-                    id={category}
-                    name={category}
-                    checked={selectedCategory === category}                  
-                  />
-                  <label>{category}</label>
-                </div>
-              ))}
+              {Object.entries(listCategories).map(
+                ([category, quantity, id]) => (
+                  <div
+                    key={id}
+                    className="boxCheckBox"
+                    onClick={() => handleCheckboxChange(category)}
+                  >
+                    <input
+                      className="checkBoxFilter"
+                      type="checkbox"
+                      id={category}
+                      name={category}
+                      checked={selectedCategory === category}
+                    />
+                    <label>
+                      {category} ({quantity})
+                    </label>
+                  </div>
+                ),
+              )}
             </div>
           </div>
-
           <Products />
         </div>
       </div>
