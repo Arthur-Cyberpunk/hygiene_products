@@ -11,13 +11,11 @@ const Products = () => {
       <div className="productGrid">
         {finalProducts?.map((product, id) => (
           <div key={id} className="product">
-            <div className="infoProduct">
-              <img
-                src={product.images[0].asset.url}
-                alt={product.images[0].alt}
-              />
-              <p className="titleProduct">{product.name}</p>
-            </div>
+            <img
+              src={product.images[0].asset.url}
+              alt={product.images[0].alt}
+            />
+            <p className="titleProduct">{product.name}</p>
           </div>
         ))}
       </div>
