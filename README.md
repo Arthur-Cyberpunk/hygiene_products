@@ -1,4 +1,4 @@
-<div align='center'><img style="width:30%" src='https://github.com/Arthur-Cyberpunk/ilumina_ecommerce/assets/72763456/44f105c9-0a78-405f-9da9-3b569c17c629'/></div>
+<div align='center'><img style="width:30%" src='https://github.com/Arthur-Cyberpunk/hygiene_products/assets/72763456/1d750656-ac26-4ecb-8a86-921816f40f4f'/></div>
 
 <h2>About the project</h2>
 
