@@ -18,9 +18,11 @@
 
 <h2>Tomadas de decisões</h2>
 
-<p>Crie uma página de listagem de itens e filtros conforme instruções na descrição do teste.</p>
+<p>Criada página de listagem de itens e filtros conforme instruções na descrição do teste.</p>
 
-<p>Componentes de critérios separados para cada parte do projeto, componentes de título, filtro de pesquisa, filtro de categoria e lista de produtos.</p>
+<p>Componentes separados para cada parte do projeto, componentes de título, filtro de pesquisa, filtro de categoria e lista de produtos.</p>
+
+<p>Feito um tema com scss para cores e tamanhos, para facilitar visualização e manutenção.</p>
 
 <p>Estados e parte da lógica formal feita na Context Api, para que os estados possam ser passados para os componentes corretamente.</p>
 
