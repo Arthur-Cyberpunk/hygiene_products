@@ -1,17 +1,19 @@
+@import '../../styles/variables.scss';
+
 .boxTitleMain {
-    padding-top: 2rem;
+    padding-top: $small;
 
     .title {
         font-size: 4rem;
         text-transform: uppercase;
-        color: #130433;
+        color: $second-color;
 
           @media (max-width: 600px) {
             font-size: 2rem;
           }
 
         span {
-            color: #4E9A90;
+            color: $primary-color;
         }
     }
 }

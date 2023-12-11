@@ -1,3 +1,5 @@
+@import '../../styles/variables.scss';
+
 .boxTitleProducts {
   width: 100%;
 
@@ -7,14 +9,14 @@
     font-size: 2.4rem;
     line-height: 1.5;
     border-bottom: 2px solid #bbbbbb;
-    color: #130433;
+    color: $second-color;
   }
 
   .productGrid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 2rem;
-    margin: 4rem 0;
+    margin: $medium 0;
 
     div:hover {
       outline: 2px solid rgba(78, 154, 144, 1);
@@ -41,7 +43,7 @@
       }
 
       .titleProduct {
-        color: #130433;
+        color: $second-color;
       }
     }
   }

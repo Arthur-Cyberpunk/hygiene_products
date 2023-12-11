@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Blinker:wght@200;400;600;700&display=swap');
 
+@import 'variables';
+@import '../components/CategoryFilter/styles.scss';
+@import '../components/Products/styles.scss';
+@import '../components/SearchFilter/styles.scss';
+@import '../components/Title/styles.scss';
+
 * {
   margin: 0;
   padding: 0;
@@ -29,24 +35,24 @@ html {
 }
 *::-webkit-scrollbar-track {
   border-radius: 5px;
-  background-color: #ffffff;
+  background-color: $default-color;
 }
 
 *::-webkit-scrollbar-track:hover {
-  background-color: #ffffff;
+  background-color: $default-color;
 }
 
 *::-webkit-scrollbar-track:active {
-  background-color: #ffffff;
+  background-color: $default-color;
 }
 
 *::-webkit-scrollbar-thumb {
   border-radius: 20px;
-  background-color: #4e9a90;
+  background-color: $primary-color;
 }
 
 *::-webkit-scrollbar-thumb:hover {
-  background-color: #4e9a90;
+  background-color: $primary-color;
 }
 
 *::-webkit-scrollbar-thumb:active {
