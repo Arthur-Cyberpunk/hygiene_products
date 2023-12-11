@@ -34,7 +34,7 @@
 <p>&nbsp &nbsp- useContext/ </p>
 <p>&nbsp &nbsp- App.jsx </p>
 <p>&nbsp &nbsp- index.js </p>
-<p>&nbsp &nbsp- products (1).json </p>
+<p>&nbsp &nbsp- productsCategory.json </p>
 <p>- package.-lock.json </p>
 <p>- package.json </p>
 <p>- README.md </p>
