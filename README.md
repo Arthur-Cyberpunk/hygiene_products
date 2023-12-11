@@ -46,6 +46,15 @@
 <h3 align='center'>Home Page 🏡</h3>
 
 <div align='center'>
-<img src='https://github.com/Arthur-Cyberpunk/hygiene_products/assets/72763456/fc72c2ec-68ee-42b9-9be8-a0d6a62beac3'/>
+<img src='https://github.com/Arthur-Cyberpunk/hygiene_products/assets/72763456/e2c0ff7c-002b-4d12-9bdf-ea7247a1ab4e'/>
+
+<h3 align='center'>Mobile</h3>
+
+<img src='https://github.com/Arthur-Cyberpunk/hygiene_products/assets/72763456/983856b6-110f-4266-bc2e-ae05b214bae3'/>
+
+<h3 align='center'></h3>
+
+<img src='https://github.com/Arthur-Cyberpunk/hygiene_products/assets/72763456/85e1b4aa-3a48-4ffc-b3b9-283c873786ad'/>
+
 
 </div>
